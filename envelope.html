@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iu em pé nhứttt <3 <3 <3</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #ffe4e1, #ffb6c1);
+            font-family: 'Courier New', Courier, monospace;
+            flex-direction: column;
+        }
+        .envelope {
+            width: 400px;
+            height: 240px;
+            position: relative;
+            background: linear-gradient(145deg, #ff9a9e, #fecfef);
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #fecfef, #ff9a9e);
+            clip-path: polygon(0 0, 100% 0, 50% 50%);
+            transition: all 0.5s ease-in-out;
+        }
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+            transform-origin: top;
+        }
+        .inner-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .envelope.open .inner-content {
+            display: block;
+        }
+        .inner-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        .hearts {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            opacity: 0.8;
+        }
+        .heart {
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 5px;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            left: -10px;
+            top: 0;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ff69b4;
+            text-align: center;
+            animation: bounce 1.5s infinite alternate;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        .note-box {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #ffffff;
+            font-weight: bold;
+            background: #ff69b4;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+        <div class="hearts">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+        <div class="inner-content">
+            <iframe src="https://www.youtube.com/embed/O6IrtL1DcZY" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+<div class="message" style="margin-top: 65px;">Click to open the surprise!</div>
+
+    <div class="note-box">
+        Nhớ bấm full-screen nhoaaaaaaaaa
+    </div>
+
+    <script>
+        function openEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            envelope.classList.add('open');
+        }
+    </script>
+
+</body>
+</html>
